@@ -2,7 +2,7 @@ const controller = {};
 
 controller.list = (req, res) => {
     req.getConnection((error,conn) =>{
-        conn.query('select *from areas_trabajo',(err,rows) =>{
+        conn.query('select *from encabezado_venta',(err,rows) =>{
             if(err){
                 res.json(err);
             }
@@ -15,10 +15,10 @@ controller.list = (req, res) => {
 
 controller.edit = (req, res) => {
 
-    const {idarea}= req.params;
+    const {num_venta}= req.params;
    
     req.getConnection((err,conn) =>{
-        conn.query('select *from areas_trabajo WHERE idarea=1   ', [idarea], (err,row) => {
+        conn.query('select *from encabezado_venta WHERE num_venta=1 ', [num_venta], (err,row) => {
             res.json(row[0]);
 
         });
@@ -30,7 +30,7 @@ controller.edit = (req, res) => {
 controller.save = (req,res) =>{
     const data = req.body;
    req.getConnection((err,conn)=> {
-       conn.query('insert into areas_trabajo SET ?', [data], (err,row) => {
+       conn.query('insert into encabezado_venta SET ?', [data], (err,row) => {
         res.json(row);
        });  
    })
@@ -38,11 +38,11 @@ controller.save = (req,res) =>{
 
 controller.update = (req,res) =>{
 
-    const {idarea}= req.params;
+    const {num_venta}= req.params;
     const nuevo_req = req.body;
   
     req.getConnection((err, conn) => {
-        conn.query('update areas_trabajo SET ? WHERE idarea=?', [nuevo_req, idarea], (err,rows) =>{ 
+        conn.query('update encabezado_venta SET ? WHERE num_venta=?', [nuevo_req, num_venta], (err,rows) =>{ 
             res.json({ message: "Registro Actualizado" }); 
 
         });
@@ -50,9 +50,9 @@ controller.update = (req,res) =>{
 };
 
 controller.delete = (req,res) =>{
-    const {idarea}= req.params; 
+    const {num_venta}= req.params; 
   req.getConnection((err,conn) => {
-      conn.query('delete from areas_trabajo WHERE idarea=?', [idarea], (err, rows) => {
+      conn.query('delete from encabezado_venta WHERE num_venta=?', [num_venta], (err, rows) => {
         res.json({ message: "Registro Eliminado" }); 
       });
   })

@@ -2,7 +2,7 @@ const controller = {};
 
 controller.list = (req, res) => {
     req.getConnection((error,conn) =>{
-        conn.query('select *from areas_trabajo',(err,rows) =>{
+        conn.query('select *from detalleventa',(err,rows) =>{
             if(err){
                 res.json(err);
             }
@@ -15,10 +15,10 @@ controller.list = (req, res) => {
 
 controller.edit = (req, res) => {
 
-    const {idarea}= req.params;
+    const {iddetventa}= req.params;
    
     req.getConnection((err,conn) =>{
-        conn.query('select *from areas_trabajo WHERE idarea=1   ', [idarea], (err,row) => {
+        conn.query('select *from detalleventa WHERE iddetventa=1', [iddetventa], (err,row) => {
             res.json(row[0]);
 
         });
@@ -30,7 +30,7 @@ controller.edit = (req, res) => {
 controller.save = (req,res) =>{
     const data = req.body;
    req.getConnection((err,conn)=> {
-       conn.query('insert into areas_trabajo SET ?', [data], (err,row) => {
+       conn.query('insert into detalleventa SET ?', [data], (err,row) => {
         res.json(row);
        });  
    })
@@ -38,11 +38,11 @@ controller.save = (req,res) =>{
 
 controller.update = (req,res) =>{
 
-    const {idarea}= req.params;
+    const {iddetventa}= req.params;
     const nuevo_req = req.body;
   
     req.getConnection((err, conn) => {
-        conn.query('update areas_trabajo SET ? WHERE idarea=?', [nuevo_req, idarea], (err,rows) =>{ 
+        conn.query('update detalleventa SET ? WHERE iddetventa=?', [nuevo_req, iddetventa], (err,rows) =>{ 
             res.json({ message: "Registro Actualizado" }); 
 
         });
@@ -50,9 +50,9 @@ controller.update = (req,res) =>{
 };
 
 controller.delete = (req,res) =>{
-    const {idarea}= req.params; 
+    const {iddetventa}= req.params; 
   req.getConnection((err,conn) => {
-      conn.query('delete from areas_trabajo WHERE idarea=?', [idarea], (err, rows) => {
+      conn.query('delete from detalleventa WHERE iddetventa=?', [iddetventa], (err, rows) => {
         res.json({ message: "Registro Eliminado" }); 
       });
   })
