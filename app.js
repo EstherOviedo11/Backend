@@ -26,7 +26,24 @@ app.use(cors(
 
 
 // rutas backend
-//const bancosRoutes = require('./rutas/bancos');
+const empresaRoutes = require('./rutas/empresa');
+const empresaRoutes = require('./rutas/areas_trabajo');
+const empresaRoutes = require('./rutas/clientes');
+const empresaRoutes = require('./rutas/cxcobrar');
+const empresaRoutes = require('./rutas/cxpagar');
+const empresaRoutes = require('./rutas/detalle_compra');
+const empresaRoutes = require('./rutas/detalle_venta');
+const empresaRoutes = require('./rutas/empleados');
+const empresaRoutes = require('./rutas/encabeza_compra');
+const empresaRoutes = require('./rutas/enacabeza_venta');
+const empresaRoutes = require('./rutas/formapago');
+const empresaRoutes = require('./rutas/pagos');
+const empresaRoutes = require('./rutas/producto');
+const empresaRoutes = require('./rutas/proveedor');
+const empresaRoutes = require('./rutas/sucursales');
+const empresaRoutes = require('./rutas/tipoproducto');
+const empresaRoutes = require('./rutas/tipousuario');
+const empresaRoutes = require('./rutas/usuario');
 
 app.set('port', process.env.PORT || 3000);
 
