@@ -27,23 +27,23 @@ app.use(cors(
 
 // rutas backend
 const empresaRoutes = require('./rutas/empresa');
-const empresaRoutes = require('./rutas/areas_trabajo');
-const empresaRoutes = require('./rutas/clientes');
-const empresaRoutes = require('./rutas/cxcobrar');
-const empresaRoutes = require('./rutas/cxpagar');
-const empresaRoutes = require('./rutas/detalle_compra');
-const empresaRoutes = require('./rutas/detalle_venta');
-const empresaRoutes = require('./rutas/empleados');
-const empresaRoutes = require('./rutas/encabeza_compra');
-const empresaRoutes = require('./rutas/enacabeza_venta');
-const empresaRoutes = require('./rutas/formapago');
-const empresaRoutes = require('./rutas/pagos');
-const empresaRoutes = require('./rutas/producto');
-const empresaRoutes = require('./rutas/proveedor');
-const empresaRoutes = require('./rutas/sucursales');
-const empresaRoutes = require('./rutas/tipoproducto');
-const empresaRoutes = require('./rutas/tipousuario');
-const empresaRoutes = require('./rutas/usuario');
+const areastrabajoRoutes = require('./rutas/areastrabajo');
+const clientesRoutes = require('./rutas/clientes');
+const cxcobrarRoutes = require('./rutas/cxcobrar');
+const cxpagarRoutes = require('./rutas/cxpagar');
+const detallecompraRoutes = require('./rutas/detallecompra');
+const detalleventaRoutes = require('./rutas/detalleventa');
+const empleadosRoutes = require('./rutas/empleados');
+const encabezadocompraRoutes = require('./rutas/encabezadocompra');
+const encabezadoventaRoutes = require('./rutas/enacabezadoventa');
+const formapagoRoutes = require('./rutas/formapago');
+const pagosRoutes = require('./rutas/pagos');
+const productosRoutes = require('./rutas/producto');
+const proveedorRoutes = require('./rutas/proveedor');
+const sucursalesRoutes = require('./rutas/sucursales');
+const tipoproductoRoutes = require('./rutas/tipoproducto');
+const tipousuarioRoutes = require('./rutas/tipousuario');
+const usuarioRoutes = require('./rutas/usuario');
 
 app.set('port', process.env.PORT || 3000);
 
